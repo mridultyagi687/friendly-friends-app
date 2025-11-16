@@ -40,7 +40,7 @@ jobs:
         working-directory: ./frontend
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://friendly-friends-backend.onrender.com' }}
-          VITE_BASE: ${{ github.event.repository.name }}
+          VITE_BASE: friendly-friends-app
           NODE_ENV: production
         run: npm run build
 
