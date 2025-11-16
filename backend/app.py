@@ -131,11 +131,14 @@ def cors_origin_check(origin: str) -> bool:
 # We'll handle dynamic origin checking in the after_request hook
 cors_allowed_origins_list = [
     "http://localhost:5173",
-    r"https://.*\.github\.io",
     "http://127.0.0.1:5173",
+    # Explicitly allow your GitHub Pages origin (path is ignored by CORS)
+    "https://mridultyagi687.github.io",
+    # Keep known external preview hosts
     "https://jerilyn-nonobligated-punningly.ngrok-free.dev",
-    r"https://.*\.ngrok-free\.dev",  # Regex pattern for ngrok-free.dev
-    r"https://.*\.ngrok\.app",  # Regex pattern for ngrok.app
+    r"https://.*\.ngrok-free\.dev",
+    r"https://.*\.ngrok\.app",
+    r"https://.*\.github\.io",
 ]
 
 CORS(
