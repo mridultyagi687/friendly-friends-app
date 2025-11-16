@@ -11,10 +11,7 @@ export default defineConfig(({ mode }) => {
 
   // Get base path from environment (for GitHub Pages deployment)
   // GitHub Pages serves from /repo-name/, so we need to set base accordingly
-  // In production (GitHub Pages), use the repo name, otherwise use '/'
-  const base = env.VITE_BASE 
-    ? `/${env.VITE_BASE}/` 
-    : (process.env.NODE_ENV === 'production' && !env.VITE_BASE ? '/friendly-friends-app/' : '/')
+  const base = env.VITE_BASE ? `/${env.VITE_BASE}/` : '/'
 
   return {
     base: base, // Set base path for GitHub Pages

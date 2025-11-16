@@ -1,0 +1,396 @@
+.app-store {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--cloudpc-bg, #f8fafc);
+  color: var(--cloudpc-text, #1a1a1a);
+  font-family: var(--cloudpc-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: var(--cloudpc-font-size, 16px);
+  overflow: hidden;
+}
+
+.app-store.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cloudpc-text, #64748b);
+  font-size: 1.2rem;
+}
+
+.app-store-header {
+  padding: 1.5rem;
+  background: var(--cloudpc-surface, #ffffff);
+  border-bottom: 1px solid var(--cloudpc-border, #e2e8f0);
+}
+
+.app-store-header h2 {
+  margin: 0 0 1rem 0;
+  color: var(--cloudpc-text, #334155);
+  font-size: 1.5rem;
+}
+
+.app-store-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-store-tabs .tab {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid var(--cloudpc-border, #e2e8f0);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--cloudpc-text, #64748b);
+  transition: all 0.2s;
+}
+
+.app-store-tabs .tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.app-store-tabs .tab:hover {
+  background: var(--cloudpc-surface, #f1f5f9);
+}
+
+.app-store-tabs .tab.active:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-store-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--cloudpc-text, #94a3b8);
+  padding: 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--cloudpc-text, #334155);
+}
+
+.empty-state p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-card {
+  background: var(--cloudpc-surface, #ffffff);
+  border: 1px solid var(--cloudpc-border, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.app-card-header h3 {
+  margin: 0;
+  color: var(--cloudpc-text, #334155);
+  font-size: 1.25rem;
+}
+
+.downloaded-badge {
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.app-description {
+  color: var(--cloudpc-text, #64748b);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.app-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--cloudpc-text, #94a3b8);
+}
+
+.app-developer {
+  font-weight: 500;
+}
+
+.app-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-actions button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.download-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.download-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.download-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.preview-button {
+  background: var(--cloudpc-surface, #f1f5f9);
+  color: var(--cloudpc-text, #334155);
+  border: 1px solid var(--cloudpc-border, #e2e8f0);
+}
+
+.preview-button:hover {
+  background: var(--cloudpc-border, #e2e8f0);
+}
+
+.open-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.open-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.remove-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.remove-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.pin-button {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.pin-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.unpin-button {
+  background: var(--cloudpc-surface, #f1f5f9);
+  color: var(--cloudpc-text, #334155);
+  border: 1px solid var(--cloudpc-border, #e2e8f0);
+}
+
+.unpin-button:hover {
+  background: var(--cloudpc-border, #e2e8f0);
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10003;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+}
+
+.popup-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.popup-error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.popup-icon {
+  font-size: 1.25rem;
+}
+
+.popup-message {
+  flex: 1;
+  font-weight: 500;
+}
+
+.popup-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.popup-close:hover {
+  opacity: 1;
+}
+
+/* Preview modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10002;
+}
+
+.preview-modal {
+  background: var(--cloudpc-bg, #ffffff);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--cloudpc-border, #e2e8f0);
+}
+
+.preview-header h3 {
+  margin: 0;
+  color: var(--cloudpc-text, #334155);
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--cloudpc-text, #64748b);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: var(--cloudpc-surface, #f1f5f9);
+  color: var(--cloudpc-text, #334155);
+}
+
+.preview-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 500px;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--cloudpc-border, #e2e8f0);
+}
+
+.preview-actions button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
