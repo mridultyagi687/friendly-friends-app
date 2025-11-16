@@ -75,6 +75,7 @@ ALLOWED_ORIGINS = [
     "https://jerilyn-nonobligated-punningly.ngrok-free.dev",
     re.compile(r'https://.*\.ngrok-free\.dev'),
     re.compile(r'https://.*\.ngrok\.app'),
+    re.compile(r'https://.*\.github\.io'),  # GitHub Pages
 ]
 
 # Session cookie configuration
